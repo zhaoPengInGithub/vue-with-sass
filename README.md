@@ -14,13 +14,20 @@ Vue
 
  可以通过淘宝的npm镜像安装node-sass，解决以上问题。
 
-$ npm install -g cnpm --registry=https://registry.npm.taobao.org  （安装淘宝镜像）
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org  （安装淘宝镜像）<br/>
 
-$ cnpm install node-sass  --save （使用淘宝镜像安装node-sass）
+$ cnpm install node-sass  --save （使用淘宝镜像安装node-sass）<br/>
+
 注：安装淘宝镜像后，仍无法安装node-sass的情况，执行下列命令
+```
+$ npm install --save node-sass 
 
-$ npm install --save node-sass --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist --sass-binary-site=http://npm.taobao.org/mirrors/node-sass
- 
+--registry=https://registry.npm.taobao.org 
+
+--disturl=https://npm.taobao.org/dist 
+
+--sass-binary-site=http://npm.taobao.org/mirrors/node-sass
+```
 说明：
  
 --registry=https://registry.npm.taobao.org 淘宝npm包镜像
@@ -33,7 +40,7 @@ $ npm install --save node-sass --registry=https://registry.npm.taobao.org --dist
 
 $ npm install --save-dev sass-loader style-loader css-loader
 
-{
+```{
     test: /\.vue$/,
     loader: 'vue-loader',
     options: {
@@ -42,7 +49,9 @@ $ npm install --save-dev sass-loader style-loader css-loader
       }
     }
   }
+```
 打开webpack.base.config.js在loaders里面加上  module -- rules (vue2.0)
+```
 rules: [
       {
         test: /\.vue$/,
@@ -76,6 +85,7 @@ rules: [
       }
     ]
   }
+ ```
 3、如果需要在vue文件style标签使用scss的话，需要声明一下：
 
   vue1.0
